@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Content Example</title>
+</head>
+<body>
+  <div id="myElement">
+    <p>Welcome to my website!</p>
+  </div>
+
+  <button onclick="updateAllParagraphs()">Click Me</button>
+
+  <script>
+    /**
+     * Updates the content of a specified paragraph element.
+     * @param {HTMLElement} paragraph - The paragraph element to update.
+     * @param {string} newText - The new text to set for the paragraph.
+     */
+    function updateParagraphContent(paragraph, newText) {
+      paragraph.textContent = newText;
+    }
+
+    /**
+     * Loops through all paragraphs inside a given container element and updates their content.
+     */
+    function updateAllParagraphs() {
+      const container = document.getElementById("myElement");
+      const paragraphs = container.getElementsByTagName("p");
+
+      // Loop through all <p> elements inside the container and update content
+      for (let i = 0; i < paragraphs.length; i++) {
+        updateParagraphContent(paragraphs[i], "Hello there!");
+      }
+    }
+  </script>
+</body>
+</html>

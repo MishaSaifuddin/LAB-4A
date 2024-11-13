@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loop Example</title>
+</head>
+<body>
+  <p id="demo"></p>
+
+  <script>
+    /**
+     * Generates a sequence of numbers with a message.
+     * @param {number} start - The starting number of the sequence.
+     * @param {number} end - The ending number of the sequence.
+     * @returns {string} - The formatted string with numbers in the sequence.
+     */
+    function generateNumberSequence(start, end) {
+      let text = "";
+
+      for (let i = start; i <= end; i++) {
+        text += formatMessage(i);
+      }
+
+      return text;
+    }
+
+    /**
+     * Formats the message for a given number.
+     * @param {number} number - The number to include in the message.
+     * @returns {string} - The formatted message for the number.
+     */
+    function formatMessage(number) {
+      return `The number is ${number}<br>`;
+    }
+
+    /**
+     * Updates the content of the paragraph element with the generated sequence.
+     */
+    function displaySequence() {
+      const sequenceText = generateNumberSequence(1, 5);
+      document.getElementById("demo").innerHTML = sequenceText;
+    }
+
+    // Call the displaySequence function to initialize the content
+    displaySequence();
+  </script>
+</body>
+</html>
